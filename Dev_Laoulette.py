@@ -2,7 +2,7 @@ import pickle, os
 from random import randrange
 
 dict={}
-
+print("\t\tBienvenu dans le jeu\n")
 nom=(input("Entrer ton nom : ")).lower()
 name=""
 for caractere in nom :
