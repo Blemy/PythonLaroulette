@@ -47,7 +47,7 @@ def nombreSorti():
                 print("Vous avez perdu😭😭😭") 
                 print("Le nombre qui a ete sorti est",nbrHas)
         choix = input("Saisir 'k' pour arrêter et n'importe quelle touche pour continuer : ")
-        #nbrHas=randrange(0,101)
+        nbrHas=randrange(0,101)
         os.system('cls')
         if choix.lower() == 'k':
             print("J'espere que t'as bien rigoler avec nous😁")
