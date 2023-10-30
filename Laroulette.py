@@ -10,9 +10,9 @@ for caractere in nom :
         name+=caractere
 dict[name]={'score':0}
 
-def foncFichEcrire():
+def foncFichEcrire(dat):
     with open("Roulette.txt", "wb") as ouvrFich :
-        pickle.dump(dict, ouvrFich)
+        pickle.dump(dat, ouvrFich)
 
 def nombreSorti():
     nbrHas=randrange(0,101)
@@ -39,19 +39,18 @@ def nombreSorti():
                 print("Ton ancien score est",tot)
                 tot+=(5-i)*30
                 print("Ton nouveau score est : ", tot) 
-                lire[name] = {'score': tot}            
-                with open("Roulette.txt", "wb") as ouvrFich:
-                    pickle.dump(lire, ouvrFich)
+                lire[name]['score'] += tot
+                foncFichEcrire(lire)
                 break
             chance=(4-i)
             if(chance==0):
                 print("Vous avez perdu😭😭😭") 
                 print("Le nombre qui a ete sorti est",nbrHas)
         choix = input("Saisir 'k' pour arrêter et n'importe quelle touche pour continuer : ")
-        nbrHas=randrange(0,101)
+        #nbrHas=randrange(0,101)
         os.system('cls')
         if choix.lower() == 'k':
             print("J'espere que t'as bien rigoler avec nous😁")
             break
-foncFichEcrire()
+foncFichEcrire(dict)
 nombreSorti()
